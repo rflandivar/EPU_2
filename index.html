@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Creación de EPUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Fondo gris claro */
+            color: #1f2937; /* Texto gris oscuro */
+        }
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+        }
+        .section-card {
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo de tarjeta blanco semi-transparente */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #22d3ee;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+        .glow-image {
+            box-shadow: none;
+        }
+        /* Animation for fade-in on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header and Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-900 uppercase tracking-wider">Proceso <span class="text-cyan-500">EPUB</span></h1>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#page1" class="nav-link text-gray-600 hover:text-cyan-500 font-semibold tracking-wide">Limpieza</a>
+                    <a href="#page2" class="nav-link text-gray-600 hover:text-cyan-500 font-semibold tracking-wide">Estilos</a>
+                    <a href="#page3" class="nav-link text-gray-600 hover:text-cyan-500 font-semibold tracking-wide">Aplicación</a>
+                    <a href="#page4" class="nav-link text-gray-600 hover:text-cyan-500 font-semibold tracking-wide">TOC</a>
+                    <a href="#page5" class="nav-link text-gray-600 hover:text-cyan-500 font-semibold tracking-wide">Ajustes</a>
+                    <a href="#page6" class="nav-link text-gray-600 hover:text-cyan-500 font-semibold tracking-wide">Exportación</a>
+                    <a href="#page7" class="nav-link text-gray-600 hover:text-cyan-500 font-semibold tracking-wide">Código</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page 1: Importación y Limpieza -->
+        <section id="page1" class="min-h-screen flex items-center justify-center pt-24 pb-12 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-content">
+                        <span class="text-cyan-500 font-semibold">Paso 1</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Importación y Limpieza</h2>
+                        <p class="text-gray-700 mb-4 text-lg">El primer paso es crucial. Un texto limpio es la base de un EPUB profesional. Esto implica eliminar todos los formatos innecesarios y estandarizar la estructura del documento.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Eliminar saltos de línea y espacios repetidos.</li>
+                            <li>Asegurar un flujo de texto continuo y sin páginas en blanco.</li>
+                            <li>Evitar cualquier tipo de formato manual que pueda interferir con los estilos.</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Limpieza+de+Texto" alt="Esquema de limpieza de texto" class="rounded-lg w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 2: Aplicación de Estilos -->
+        <section id="page2" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="image-content lg:order-last">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Panel+de+Estilos" alt="Panel de estilos de párrafo en software de maquetación" class="rounded-lg w-full h-auto object-cover">
+                    </div>
+                    <div class="text-content">
+                        <span class="text-cyan-500 font-semibold">Paso 2</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Definición de Estilos</h2>
+                        <p class="text-gray-700 mb-4 text-lg">La creación de estilos de párrafo es fundamental. Define estilos para cada elemento (títulos, cuerpo, etc.) para mantener la consistencia y facilitar la exportación.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li><strong>Estilo Título:</strong> Configura fuente, espaciado y alineación.</li>
+                            <li><strong>Estilo Cuerpo:</strong> Define la tipografía principal, justificación e idioma.</li>
+                            <li><strong>Opción Clave:</strong> Marca "Conservar líneas juntas" para evitar viudas y huérfanas.</li>
+                            <li><strong>Separación de Sílabas:</strong> Actívala para un flujo de texto más natural.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 3: Aplicación de Estilos al Documento -->
+        <section id="page3" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-content">
+                        <span class="text-cyan-500 font-semibold">Paso 3</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Aplicación Masiva</h2>
+                        <p class="text-gray-700 mb-4 text-lg">Aplica los estilos creados de forma eficiente. Utiliza herramientas como "Buscar/Cambiar" con expresiones GREP para automatizar la asignación de estilos a lo largo de todo el documento.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Usa Scripts para tareas repetitivas.</li>
+                            <li>Con GREP, puedes buscar patrones (ej: todo texto en mayúsculas) y aplicarles el estilo "Título" automáticamente.</li>
+                            <li>Esta técnica ahorra horas de trabajo manual y garantiza cero errores.</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Ventana+GREP" alt="Ventana de Buscar/Cambiar con GREP" class="rounded-lg w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 4: Creación de la Tabla de Contenido (TOC) -->
+        <section id="page4" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="image-content lg:order-last">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Configuraci%C3%B3n+TOC" alt="Configuración de Estilos de Tabla de Contenido" class="rounded-lg w-full h-auto object-cover">
+                    </div>
+                    <div class="text-content">
+                        <span class="text-cyan-500 font-semibold">Paso 4</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Tabla de Contenido</h2>
+                        <p class="text-gray-700 mb-4 text-lg">La tabla de contenido (TOC) es obligatoria y esencial para la navegación del EPUB. Se genera automáticamente a partir de los estilos de párrafo que has definido.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Crea un nuevo estilo de TOC desde el menú "Maquetación".</li>
+                            <li>Selecciona el estilo de párrafo que conformará la TOC (ej: "Título").</li>
+                            <li><strong>¡Crítico!:</strong> Marca siempre la opción "Crear anclaje de texto en párrafo de origen" para que los links funcionen.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 5: Ajustes y Exportación -->
+        <section id="page5" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-content">
+                        <span class="text-cyan-500 font-semibold">Paso 5</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Etiquetas de Exportación</h2>
+                        <p class="text-gray-700 mb-4 text-lg">Antes de exportar, debes indicarle al programa cómo convertir tus estilos en código HTML. Esto se hace a través de las "Etiquetas de Exportación" en las opciones de cada estilo.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Edita el estilo "Título" y en "Etiquetas de exportación", asigna la etiqueta HTML `h2`.</li>
+                            <li>Activa la opción "Dividir documento (solo EPUB)" para que cada capítulo empiece en una nueva página.</li>
+                            <li>Asigna etiquetas semánticas a otros estilos (ej: `blockquote` para entradas).</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                       <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Etiquetas+de+Exportaci%C3%B3n" alt="Ventana de Etiquetas de Exportación" class="rounded-lg w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 6: Exportación del EPUB -->
+        <section id="page6" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="image-content lg:order-last">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Ventana+Exportar" alt="Ventana de opciones de exportación de EPUB" class="rounded-lg w-full h-auto object-cover">
+                    </div>
+                    <div class="text-content">
+                        <span class="text-cyan-500 font-semibold">Paso 6</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">La Exportación Final</h2>
+                        <p class="text-gray-700 mb-4 text-lg">Es el momento de generar el archivo EPUB. Configura correctamente las opciones de exportación para asegurar un resultado óptimo y compatible.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Formato: Elige EPUB (ajustable), versión 3.0.</li>
+                            <li>Portada: Selecciona la imagen de portada.</li>
+                            <li>Navegación: Usa el estilo de TOC que creaste.</li>
+                            <li>División: Basa la división del documento en las "etiquetas de exportación".</li>
+                            <li>Metadatos: Rellena toda la información del libro (título, autor, etc.).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 7: Ajustes Finales en el Código -->
+        <section id="page7" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-content">
+                        <span class="text-cyan-500 font-semibold">Paso 7</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Ajustes en Código</h2>
+                        <p class="text-gray-700 mb-4 text-lg">Un EPUB profesional casi siempre requiere ajustes finos en su código. Usando un editor como Calibre (gratuito), puedes modificar directamente el HTML y CSS para un control total.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Abre el EPUB en un editor de código como Calibre.</li>
+                            <li>Navega a la hoja de estilos CSS.</li>
+                            <li>Modifica las propiedades de las clases generadas (ej: cambia el color de todos los `h2`).</li>
+                            <li>La edición directa del CSS te permite lograr efectos visuales imposibles desde el software de maquetación.</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Editor+de+C%C3%B3digo" alt="Interfaz de un editor de código para EPUB como Calibre" class="rounded-lg w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-100 border-t border-gray-200 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 Guía de Creación EPUB. Creado con un diseño potente.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.fade-in-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+            
+            sections.forEach(section => {
+                navObserver.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+
