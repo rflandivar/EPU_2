@@ -11,14 +11,14 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #1f2937;
+            background-color: #f3f4f6; /* Fondo gris claro */
+            color: #1f2937; /* Texto gris oscuro */
         }
         h1, h2, h3 {
             font-family: 'Oswald', sans-serif;
         }
         .section-card {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo de tarjeta blanco semi-transparente */
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -48,6 +48,7 @@
         .glow-image {
             box-shadow: none;
         }
+        /* Animation for fade-in on scroll */
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -61,7 +62,7 @@
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Header -->
+    <!-- Header and Navigation -->
     <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
@@ -80,14 +81,14 @@
     </header>
 
     <main>
-        <!-- Page 1 -->
+        <!-- Page 1: Importación y Limpieza -->
         <section id="page1" class="min-h-screen flex items-center justify-center pt-24 pb-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
                     <div class="text-content">
                         <span class="text-cyan-500 font-semibold">Paso 1</span>
                         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Importación y Limpieza</h2>
-                        <p class="text-gray-700 mb-4 text-lg">El primer paso es crucial. Un texto limpio es la base de un EPUB profesional.</p>
+                        <p class="text-gray-700 mb-4 text-lg">El primer paso es crucial. Un texto limpio es la base de un EPUB profesional. Esto implica eliminar todos los formatos innecesarios y estandarizar la estructura del documento.</p>
                         <ul class="list-disc list-inside space-y-2 text-gray-600">
                             <li>Eliminar saltos de línea y espacios repetidos.</li>
                             <li>Asegurar un flujo de texto continuo y sin páginas en blanco.</li>
@@ -95,23 +96,23 @@
                         </ul>
                     </div>
                     <div class="image-content">
-                        <img src="img/01_E.jpeg" alt="Esquema de limpieza de texto" class="rounded-lg w-full h-auto object-cover">
+                        <img src="https://https://raw.githubusercontent.com/rflandivar/EPU_2/main/img/01_E.jpeg">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Page 2 -->
+        <!-- Page 2: Aplicación de Estilos -->
         <section id="page2" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
                     <div class="image-content lg:order-last">
-                        <img src="https://raw.githubusercontent.com/rflandivar/EPU_2/main/img/02_E.jpeg" alt="Panel de estilos de párrafo" class="rounded-lg w-full h-auto object-cover">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Panel+de+Estilos" alt="Panel de estilos de párrafo en software de maquetación" class="rounded-lg w-full h-auto object-cover">
                     </div>
                     <div class="text-content">
                         <span class="text-cyan-500 font-semibold">Paso 2</span>
                         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Definición de Estilos</h2>
-                        <p class="text-gray-700 mb-4 text-lg">La creación de estilos de párrafo es fundamental.</p>
+                        <p class="text-gray-700 mb-4 text-lg">La creación de estilos de párrafo es fundamental. Define estilos para cada elemento (títulos, cuerpo, etc.) para mantener la consistencia y facilitar la exportación.</p>
                         <ul class="list-disc list-inside space-y-2 text-gray-600">
                             <li><strong>Estilo Título:</strong> Configura fuente, espaciado y alineación.</li>
                             <li><strong>Estilo Cuerpo:</strong> Define la tipografía principal, justificación e idioma.</li>
@@ -123,14 +124,14 @@
             </div>
         </section>
 
-        <!-- Page 3 -->
+        <!-- Page 3: Aplicación de Estilos al Documento -->
         <section id="page3" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
                     <div class="text-content">
                         <span class="text-cyan-500 font-semibold">Paso 3</span>
                         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Aplicación Masiva</h2>
-                        <p class="text-gray-700 mb-4 text-lg">Aplica los estilos creados de forma eficiente.</p>
+                        <p class="text-gray-700 mb-4 text-lg">Aplica los estilos creados de forma eficiente. Utiliza herramientas como "Buscar/Cambiar" con expresiones GREP para automatizar la asignación de estilos a lo largo de todo el documento.</p>
                         <ul class="list-disc list-inside space-y-2 text-gray-600">
                             <li>Usa Scripts para tareas repetitivas.</li>
                             <li>Con GREP, puedes buscar patrones (ej: todo texto en mayúsculas) y aplicarles el estilo "Título" automáticamente.</li>
@@ -138,26 +139,26 @@
                         </ul>
                     </div>
                     <div class="image-content">
-                        <img src="https://raw.githubusercontent.com/rflandivar/EPU_2/main/img/03_E.jpeg" alt="Ventana GREP" class="rounded-lg w-full h-auto object-cover">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Ventana+GREP" alt="Ventana de Buscar/Cambiar con GREP" class="rounded-lg w-full h-auto object-cover">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Page 4 -->
+        <!-- Page 4: Creación de la Tabla de Contenido (TOC) -->
         <section id="page4" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
                     <div class="image-content lg:order-last">
-                        <img src="https://raw.githubusercontent.com/rflandivar/EPU_2/main/img/04_E.jpeg" alt="Configuración TOC" class="rounded-lg w-full h-auto object-cover">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Configuraci%C3%B3n+TOC" alt="Configuración de Estilos de Tabla de Contenido" class="rounded-lg w-full h-auto object-cover">
                     </div>
                     <div class="text-content">
                         <span class="text-cyan-500 font-semibold">Paso 4</span>
                         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Tabla de Contenido</h2>
-                        <p class="text-gray-700 mb-4 text-lg">La tabla de contenido (TOC) es obligatoria y esencial para la navegación del EPUB.</p>
+                        <p class="text-gray-700 mb-4 text-lg">La tabla de contenido (TOC) es obligatoria y esencial para la navegación del EPUB. Se genera automáticamente a partir de los estilos de párrafo que has definido.</p>
                         <ul class="list-disc list-inside space-y-2 text-gray-600">
                             <li>Crea un nuevo estilo de TOC desde el menú "Maquetación".</li>
-                            <li>Selecciona el estilo de párrafo que conformará la TOC.</li>
+                            <li>Selecciona el estilo de párrafo que conformará la TOC (ej: "Título").</li>
                             <li><strong>¡Crítico!:</strong> Marca siempre la opción "Crear anclaje de texto en párrafo de origen" para que los links funcionen.</li>
                         </ul>
                     </div>
@@ -165,38 +166,38 @@
             </div>
         </section>
 
-        <!-- Page 5 -->
+        <!-- Page 5: Ajustes y Exportación -->
         <section id="page5" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
                     <div class="text-content">
                         <span class="text-cyan-500 font-semibold">Paso 5</span>
                         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Etiquetas de Exportación</h2>
-                        <p class="text-gray-700 mb-4 text-lg">Antes de exportar, debes indicarle al programa cómo convertir tus estilos en código HTML.</p>
+                        <p class="text-gray-700 mb-4 text-lg">Antes de exportar, debes indicarle al programa cómo convertir tus estilos en código HTML. Esto se hace a través de las "Etiquetas de Exportación" en las opciones de cada estilo.</p>
                         <ul class="list-disc list-inside space-y-2 text-gray-600">
-                            <li>Edita el estilo "Título" y en "Etiquetas de exportación", asigna la etiqueta HTML <code>h2</code>.</li>
+                            <li>Edita el estilo "Título" y en "Etiquetas de exportación", asigna la etiqueta HTML `h2`.</li>
                             <li>Activa la opción "Dividir documento (solo EPUB)" para que cada capítulo empiece en una nueva página.</li>
-                            <li>Asigna etiquetas semánticas a otros estilos.</li>
+                            <li>Asigna etiquetas semánticas a otros estilos (ej: `blockquote` para entradas).</li>
                         </ul>
                     </div>
                     <div class="image-content">
-                       <img src="https://raw.githubusercontent.com/rflandivar/EPU_2/main/img/05_E.jpeg" alt="Etiquetas de Exportación" class="rounded-lg w-full h-auto object-cover">
+                       <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Etiquetas+de+Exportaci%C3%B3n" alt="Ventana de Etiquetas de Exportación" class="rounded-lg w-full h-auto object-cover">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Page 6 -->
+        <!-- Page 6: Exportación del EPUB -->
         <section id="page6" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
                     <div class="image-content lg:order-last">
-                        <img src="https://raw.githubusercontent.com/rflandivar/EPU_2/main/img/06_E.jpeg" alt="Ventana Exportar" class="rounded-lg w-full h-auto object-cover">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Ventana+Exportar" alt="Ventana de opciones de exportación de EPUB" class="rounded-lg w-full h-auto object-cover">
                     </div>
                     <div class="text-content">
                         <span class="text-cyan-500 font-semibold">Paso 6</span>
                         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">La Exportación Final</h2>
-                        <p class="text-gray-700 mb-4 text-lg">Es el momento de generar el archivo EPUB.</p>
+                        <p class="text-gray-700 mb-4 text-lg">Es el momento de generar el archivo EPUB. Configura correctamente las opciones de exportación para asegurar un resultado óptimo y compatible.</p>
                         <ul class="list-disc list-inside space-y-2 text-gray-600">
                             <li>Formato: Elige EPUB (ajustable), versión 3.0.</li>
                             <li>Portada: Selecciona la imagen de portada.</li>
@@ -209,27 +210,28 @@
             </div>
         </section>
 
-        <!-- Page 7 -->
+        <!-- Page 7: Ajustes Finales en el Código -->
         <section id="page7" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
                     <div class="text-content">
                         <span class="text-cyan-500 font-semibold">Paso 7</span>
                         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 uppercase">Ajustes en Código</h2>
-                        <p class="text-gray-700 mb-4 text-lg">Un EPUB profesional casi siempre requiere ajustes finos en su código.</p>
+                        <p class="text-gray-700 mb-4 text-lg">Un EPUB profesional casi siempre requiere ajustes finos en su código. Usando un editor como Calibre (gratuito), puedes modificar directamente el HTML y CSS para un control total.</p>
                         <ul class="list-disc list-inside space-y-2 text-gray-600">
                             <li>Abre el EPUB en un editor de código como Calibre.</li>
                             <li>Navega a la hoja de estilos CSS.</li>
-                            <li>Modifica las propiedades de las clases generadas.</li>
+                            <li>Modifica las propiedades de las clases generadas (ej: cambia el color de todos los `h2`).</li>
                             <li>La edición directa del CSS te permite lograr efectos visuales imposibles desde el software de maquetación.</li>
                         </ul>
                     </div>
                     <div class="image-content">
-                        <img src="https://raw.githubusercontent.com/rflandivar/EPU_2/main/img/07_E.jpeg" alt="Editor de Código" class="rounded-lg w-full h-auto object-cover">
+                        <img src="https://placehold.co/600x400/f3f4f6/1f2937?text=Editor+de+C%C3%B3digo" alt="Interfaz de un editor de código para EPUB como Calibre" class="rounded-lg w-full h-auto object-cover">
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="bg-gray-100 border-t border-gray-200 py-6">
