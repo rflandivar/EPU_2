@@ -89,6 +89,7 @@
                         <h2 class="text-4xl md:text-5xl font-bold text-cyan-500 mt-2 mb-6 uppercase">Requisitos EPUB</h2>
                         <p class="text-gray-700 mb-4 text-lg">El primer paso es crucial. Un texto limpio es la base de un EPUB profesional. Esto implica eliminar todos los formatos innecesarios y estandarizar la estructura del documento.</p>
                         <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Ajustar las máscaras de recorte al tamaño máximo de la hoja.</li>
                             <li>Eliminar saltos de línea y espacios repetidos.</li>
                             <li>Asegurar un flujo de texto continuo y sin páginas en blanco.</li>
                             <li>Subir todos los archivos en el orden indicado (INDD, EPUB, fotografías, etc).</li>
@@ -103,7 +104,28 @@
             </div>
         </section>
 
-        <!-- Page 2: Creación de Estilos -->
+            <!-- Page 2: Máscara de imagen -->
+        <section id="page1" class="min-h-screen flex items-center justify-center pt-24 pb-12 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-content">
+                        <h2 class="text-4xl md:text-5xl font-bold text-cyan-500 mt-2 mb-6 uppercase">Máscara de la Imagen</h2>
+                        <p class="text-gray-700 mb-4 text-lg">La máscara de imagen no debe sobrepasar el tamaño de la hoja</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>En este ejemplo se indica cómo el tamaño máximo de la máscara está determinado en base a los márgenes máximos de la hoja</li>
+                            <li>Por ejemplo si la hoja tiene un tamaño de A4 la imagen no lo puede exeder en los bordes.</li>
+                            <li>Además si una imagen es a doble página se requiere recortar la imagen por cada página.</li>
+                            <li>El error que se presenta en este caso suele ser que en la app se visualiza a doble página.</li>
+                        </ul>
+                    </div>
+                    <div class="image-content">
+                        <img src="https://github.com/rflandivar/EPU_2/blob/main/img/01_E.jpg?raw=true" alt="Esquema de limpieza de texto" class="rounded-lg w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 3: Creación de Estilos -->
         <section id="page2" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
@@ -124,7 +146,7 @@
             </div>
         </section>
 
-        <!-- Page 3: Aplicación de Estilos -->
+        <!-- Page 4: Aplicación de Estilos -->
         <section id="page3" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
@@ -144,7 +166,7 @@
             </div>
         </section>
 
-        <!-- Page 4: Creación de la Tabla de Contenido (TOC) -->
+        <!-- Page 5: Creación de la Tabla de Contenido (TOC) -->
         <section id="page4" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
@@ -164,7 +186,7 @@
             </div>
         </section>
 
-        <!-- Page 5: Ajustes y Exportación -->
+        <!-- Page 6: Ajustes y Exportación -->
         <section id="page5" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
@@ -184,7 +206,7 @@
             </div>
         </section>
 
-        <!-- Page 6: Exportación del EPUB -->
+        <!-- Page 7: Exportación del EPUB -->
         <section id="page6" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
@@ -206,7 +228,7 @@
             </div>
         </section>
 
-        <!-- Page 7: Ajustes Finales en el Código -->
+        <!-- Page 8: Ajustes Finales en el Código -->
         <section id="page7" class="min-h-screen flex items-center justify-center py-12 fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="section-card rounded-lg shadow-2xl overflow-hidden p-8 lg:p-12 grid lg:grid-cols-2 gap-12 items-center">
@@ -312,6 +334,7 @@
     </script>
 </body>
 </html>
+
 
 
 
